@@ -9,8 +9,13 @@ matrix : p2 hub75 128x64 ( DP3246 + SM5368 )
 
 https://youtu.be/-X4493Losbk?si=YjUdqubvIYlr2KFF
 ## 📺 Demo Video
-[![Watch the Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YjUdqubvIYlr2KFF)
-
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=-X4493Losbk">
+    <img src="https://img.youtube.com/vi/-X4493Losbk/maxresdefault.jpg" width="600">
+  </a>
+  <br>
+  <b>Real-time Screen Mirroring to HUB75 LED matrix (ESP32-S3)</b>
+</p>
 모니터 화면을 hub75 led matrix 로 스트리밍 하는 예제 입니다. 
 파이썬 프로그램은 맥OS 에서만 테스트 되었습니다. 
 
