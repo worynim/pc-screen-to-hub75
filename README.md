@@ -7,7 +7,9 @@ ESP32-S3와 HUB75 LED 매트릭스를 활용하여 PC 화면을 실시간으로 
 화면 캡쳐 하는 부분이 윈도우와 달라서 윈도우의 경우 수정이 필요합니다.  <br>
 board : HUIDU HD-WF2 (ESP32S3) <br>
 matrix : p2 hub75 128x64 ( DP3246 + SM5368 )<br>
-<br>
+다른 HUB75 led matrix 패널은 ESP32-HUB75-MatrixPanel-DMA 라이브러리를 확인 하세요.  <br>
+https://github.com/mrcodetastic/ESP32-HUB75-MatrixPanel-DMA<br>
+<br><br>
 https://youtu.be/-X4493Losbk?si=YjUdqubvIYlr2KFF
 <p align="center">
   <a href="https://www.youtube.com/watch?v=-X4493Losbk">
