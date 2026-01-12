@@ -95,10 +95,10 @@ def start_streaming():
     last_fps_update_time = time.perf_counter()
 
     with mss.mss() as sct:
-        monitor = sct.monitors[2]
+        monitor = sct.monitors[1]
         target_ratio = WIDTH / HEIGHT
         region = {
-            "top": monitor["top"] + (monitor['height'] - int(monitor['width'] / target_ratio)),
+            "top": monitor["top"] + (monitor['height'] - int(monitor['width'] / target_ratio)) // 2,
             "left": monitor["left"],
             "width": monitor['width'],
             "height": int(monitor['width'] / target_ratio)
