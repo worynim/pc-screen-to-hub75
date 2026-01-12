@@ -21,11 +21,12 @@ https://youtu.be/-X4493Losbk?si=YjUdqubvIYlr2KFF
 정확한 이유는 아직 모르겠는데 ESP32 코어 버전이 3.3.3 에서 잘 동작 합니다. 현재 최신 버전(3.3.5) 에서 프레임이 떨어집니다. 
 
 
-ESP32_HUB75_LED_MATRIX_PANEL_DMA_Display 라이브러리의
-/src/platforms/esp32s3/esp32s3-default-pins.hpp 파일을 아래 내용으로 수정하세요. 
+ESP32_HUB75_LED_MATRIX_PANEL_DMA_Display/src/platforms/esp32s3/esp32s3-default-pins.hpp 
+
+파일을 아래 내용으로 수정하세요. 
 
 
-#pragma once
+//#pragma once
 // Avoid and QSPI pins
 #define R1_PIN_DEFAULT 2
 #define G1_PIN_DEFAULT 6
@@ -41,6 +42,7 @@ ESP32_HUB75_LED_MATRIX_PANEL_DMA_Display 라이브러리의
 #define LAT_PIN_DEFAULT 33
 #define OE_PIN_DEFAULT  35
 #define CLK_PIN_DEFAULT 34
+
 
 arduino IDE 보드 설정을 ESP32S3 Dev Module 로 설정 합니다. 
 Huidu HD-WF2로 설정 할 경우 AP정보가 저장이 되지 않는 버그가 있습니다. 
