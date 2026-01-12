@@ -22,10 +22,9 @@ https://youtu.be/-X4493Losbk?si=YjUdqubvIYlr2KFF
 
 
 ESP32_HUB75_LED_MATRIX_PANEL_DMA_Display/src/platforms/esp32s3/esp32s3-default-pins.hpp 
-
 파일을 아래 내용으로 수정하세요. 
 
-
+//////////////////////////////////
 #pragma once<br>
 // Avoid and QSPI pins<br>
 #define R1_PIN_DEFAULT 2<br>
@@ -42,7 +41,7 @@ ESP32_HUB75_LED_MATRIX_PANEL_DMA_Display/src/platforms/esp32s3/esp32s3-default-p
 #define LAT_PIN_DEFAULT 33<br>
 #define OE_PIN_DEFAULT  35<br>
 #define CLK_PIN_DEFAULT 34<br>
-
+//////////////////////////////////
 
 
 arduino IDE 보드 설정을 ESP32S3 Dev Module 로 설정 합니다. <br>
