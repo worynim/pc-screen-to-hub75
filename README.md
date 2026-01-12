@@ -44,8 +44,9 @@ ESP32_HUB75_LED_MATRIX_PANEL_DMA_Display/src/platforms/esp32s3/esp32s3-default-p
 #define CLK_PIN_DEFAULT 34<br>
 
 
-arduino IDE 보드 설정을 ESP32S3 Dev Module 로 설정 합니다. 
-Huidu HD-WF2로 설정 할 경우 AP정보가 저장이 되지 않는 버그가 있습니다. 
+
+arduino IDE 보드 설정을 ESP32S3 Dev Module 로 설정 합니다. <br>
+Huidu HD-WF2로 설정 할 경우 AP정보가 저장이 되지 않는 버그가 있습니다. <br>
 <img width="440" height="585" alt="image" src="https://github.com/user-attachments/assets/99435ef4-53d2-4a24-aa05-2ad7f36cff3e"></img>
 
 
