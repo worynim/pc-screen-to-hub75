@@ -22,6 +22,7 @@ https://youtu.be/-X4493Losbk?si=YjUdqubvIYlr2KFF
 
 
 ESP32_HUB75_LED_MATRIX_PANEL_DMA_Display 라이브러리의
+
 /src/platforms/esp32s3/esp32s3-default-pins.hpp 파일을 아래 내용으로 수정하세요. 
 
 #pragma once
