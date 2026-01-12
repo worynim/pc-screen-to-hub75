@@ -129,7 +129,7 @@ void setup() {
   dma_display->setTextColor(dma_display->color565(128, 128, 128));
   dma_display->setCursor(2, 25);
   dma_display->println("AP : ESP_WIFI_SCREEN");
-  dma_display->println("Setup WiFi via Phone");
+  dma_display->println("Set : SSID & PASSWORD");
   dma_display->flipDMABuffer();
 
   // WiFiManager를 통해 설정 포털 생성
