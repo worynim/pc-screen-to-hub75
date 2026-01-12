@@ -20,7 +20,7 @@ https://youtu.be/-X4493Losbk?si=YjUdqubvIYlr2KFF
 
 정확한 이유는 아직 모르겠는데 ESP32 코어 버전이 3.3.3 에서 잘 동작 합니다. 현재 최신 버전(3.3.5) 에서 프레임이 떨어집니다. 
 
-<img width="440" height="585" alt="image" src="https://github.com/user-attachments/assets/99435ef4-53d2-4a24-aa05-2ad7f36cff3e">
+<img width="440" height="585" alt="image" src="https://github.com/user-attachments/assets/99435ef4-53d2-4a24-aa05-2ad7f36cff3e"></img>
 
 
 arduino IDE 보드 설정을 ESP32S3 Dev Module 로 설정 합니다. 
