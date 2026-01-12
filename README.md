@@ -8,6 +8,7 @@ board : HUIDU HD-WF2 (ESP32S3)
 matrix : p2 hub75 128x64 ( DP3246 + SM5368 )
 
 https://youtu.be/-X4493Losbk?si=YjUdqubvIYlr2KFF
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-X4493Losbk?si=YjUdqubvIYlr2KFF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 모니터 화면을 hub75 led matrix 로 스트리밍 하는 예제 입니다. 
 파이썬 프로그램은 맥OS 에서만 테스트 되었습니다. 
