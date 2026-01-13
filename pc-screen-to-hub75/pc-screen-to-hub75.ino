@@ -239,6 +239,7 @@ void loop() {
           dma_display->flipDMABuffer(); // 버퍼 스왑
           frame_count++;
           is_streaming = true;               // 데이터를 성공적으로 출력하면 스트리밍 중으로 간주
+          lastDiscoveryTime = currentMillis;
           last_packet_time = currentMillis;  // 성공 시 타임아웃 카운트 리셋
           digitalWrite(WF2_LED, !digitalRead(WF2_LED)); // LED 토글
         }
