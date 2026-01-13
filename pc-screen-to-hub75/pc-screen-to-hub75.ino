@@ -30,6 +30,7 @@ const unsigned long discoveryInterval = 3000;    // 탐색 패킷 송신 간격 
 #define FRAME_RECV_TIMEOUT_MS 100                // 데이터 수신 타임아웃 (100ms)
 
 const uint8_t WF2_LED = 40;                      // 상태 표시용 온보드 LED
+bool is_streaming = false;                       // 현재 데이터를 수신 중인지 나타내는 상태 변수
 
 // -------------------------------------------------------------------------
 // 2. 전역 객체 및 버퍼 선언
@@ -171,20 +172,23 @@ void setup() {
 void loop() {
   unsigned long currentMillis = millis();
 
-  // [Task 1] 서버 탐색(Discovery) 및 패킷 수신 대기 제어
-  if (currentMillis - last_packet_time >= FRAME_RECV_TIMEOUT_MS) {
+  // 스트리밍 중이 아닐 때만 Discovery 패킷을 보냅니다.
+  if (!is_streaming) {
     if (currentMillis - lastDiscoveryTime >= discoveryInterval) {
       lastDiscoveryTime = currentMillis;
-      sendDiscoveryPacket(); // 데이터가 안 올 때만 자신을 알림
-      Serial.print("Waiting for Server... IP: ");
+      sendDiscoveryPacket();
+      Serial.print("Searching for server... IP: ");
       Serial.println(WiFi.localIP());
     }
   }
 
-  // [Task 2] 데이터 수신 중 타임아웃 발생 시 상태 초기화
-  if (is_assembling && (currentMillis - last_packet_time > FRAME_RECV_TIMEOUT_MS)) {
-    reset_assembly_state();
-    Serial.println("Packet Loss: Timeout Reset");
+  // --- [Task 2 수정] 타임아웃 처리 ---
+  if (currentMillis - last_packet_time > FRAME_RECV_TIMEOUT_MS) {
+    if (is_streaming) {
+      is_streaming = false;  // 스트리밍 중단 상태로 변경
+      reset_assembly_state();
+      Serial.println("Streaming Stopped / Timeout");
+    }
   }
 
   // [Task 3] UDP 데이터 수신 처리
@@ -234,6 +238,8 @@ void loop() {
         if (res == 0) { // 디코딩 성공 시
           dma_display->flipDMABuffer(); // 버퍼 스왑
           frame_count++;
+          is_streaming = true;               // 데이터를 성공적으로 출력하면 스트리밍 중으로 간주
+          last_packet_time = currentMillis;  // 성공 시 타임아웃 카운트 리셋
           digitalWrite(WF2_LED, !digitalRead(WF2_LED)); // LED 토글
         }
         reset_assembly_state();
@@ -245,7 +251,6 @@ void loop() {
   if (currentMillis - fps_last_time >= 1000) {
     current_fps = frame_count;
     if (current_fps > 0) {
-      Serial.print("Performance: ");
       Serial.print(current_fps);
       Serial.println(" FPS");
     }
