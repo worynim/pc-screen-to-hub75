@@ -56,9 +56,11 @@ Huidu HD-WF2로 설정 할 경우 AP정보가 저장이 되지 않는 버그가 
 매트릭스 패널마다 R,G,B 의 순서가 다를 수 있습니다. <br>
 파이썬 아래 코드의 r,g,b 순서를 바꿔서 색이 제대로 나오도록 설정 하세요. <br>
 
-img_esp = Image.merge("RGB", (b, g, r))   <br>
+img_esp = Image.merge("RGB", (b, g, r))   <br> <br>
 
 
 
 
+p3 64x64 ICND2046 패널 사용시  <br>
+https://blog.naver.com/hehevnt/224145106404 <br>
 
