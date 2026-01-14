@@ -67,6 +67,6 @@ img_esp = Image.merge("RGB", (b, g, r))   <br> <br>
 
 
 
-p3 64x64 ICND2046 패널 사용시  <br>
+p3 64x64 ICND2046 패널 사용시 주의사항 <br>
 https://blog.naver.com/hehevnt/224145106404 <br>
 
